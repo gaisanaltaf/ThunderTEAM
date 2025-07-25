@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oxanium:wght@400;600;700&display=swap');
+
+:root {
+    --primary-bg: #1a1a1a; /* Dark background */
+    --secondary-bg: #2a2a2a; /* Slightly lighter dark for sections */
+    --accent-yellow: #0077ff; /* Gold/Yellow accent */
+    --text-light: #e0e0e0;
+    --text-dark: #333;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(42, 42, 42, 0.7); /* Slightly transparent for cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Clean, modern font */
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.main-wrapper {
+    max-width: 1600px; /* Lebar website yang lebih besar */
+    margin: 0 auto;
+    position: relative;
+    /* Optional: background pattern/texture */
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0 20v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent dark header */
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-family: 'Oxanium', monospace; /* Techy/gaming font for logo */
+    font-weight: 800;
+    font-size: 1.8em;
+    color: var(--accent-yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin: 0 25px;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-yellow);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.main-nav ul li a:hover {
+    color: var(--accent-yellow);
+}
+
+.tiktok-handle-header {
+    font-family: 'Oxanium', monospace;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--accent-yellow);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    min-height: calc(100vh - 100px); /* Adjust based on header height */
+    align-items: center;
+    padding: 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-content {
+    flex: 2;
+    padding-right: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-family: 'Oxanium', monospace;
+    font-size: 5.5em; /* Sangat besar */
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.yellow-text {
+    color: var(--accent-yellow);
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent-yellow) 0%, darken(var(--accent-yellow), 10%) 100%);
+    color: var(--text-dark);
+    padding: 18px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+.right-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px; /* Minimal tinggi untuk visual */
+}
+
+.character-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg); /* Slightly rotate */
+    width: 700px; /* Ukuran container karakter */
+    height: 700px;
+    background-image: url('minecraft_background.png'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); /* Diagonal cut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    animation: rotateBackground 20s linear infinite alternate; /* Animasi latar belakang */
+}
+
+.character-image {
+    width: 100%; /* Agar gambar karakter mengisi container */
+    height: 100%;
+    object-fit: contain; /* Agar gambar tidak terpotong */
+    transform: rotate(-10deg) scale(1.1); /* Counter-rotate dan sedikit zoom */
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.7)); /* Shadow pada karakter */
+}
+
+@keyframes rotateBackground {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* --- General Section Styling --- */
+section {
+    padding: 100px 50px;
+    margin-bottom: 50px;
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1; /* Make sure sections are above the main background */
+}
+
+section h2 {
+    font-family: 'Oxanium', monospace;
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-yellow);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* --- Info Cards (Rules) --- */
+.info-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.info-card h3 {
+    font-family: 'Oxanium', monospace;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--accent-yellow);
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: var(--text-light);
+}
+
+.info-card p {
+    font-size: 1.05em;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* --- Admin Grid --- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.admin-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.admin-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-yellow);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.admin-card:hover img {
+    transform: scale(1.05);
+}
+
+.admin-card h3 {
+    font-family: 'Oxanium', monospace;
+    font-size: 1.7em;
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+}
+
+.admin-tag {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 215, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.admin-card p {
+    font-size: 1em;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    text-align: center;
+    padding: 80px 50px;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact-button.tiktok {
+    background-color: #000; /* Dark background for TikTok button */
+    color: #fff;
+    border-color: #fff;
+}
+
+.contact-button.tiktok:hover {
+    background-color: #222;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.contact-button.email {
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+}
+
+.contact-button.email:hover {
+    background-color: darken(var(--accent-yellow), 5%);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 50px;
+    background-color: #0d0d0d;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .header {
+        padding: 20px 30px;
+    }
+    .main-nav ul li {
+        margin: 0 15px;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 30px;
+        min-height: auto;
+    }
+    .left-content {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+    .hero-text h1 {
+        font-size: 4em;
+    }
+    .hero-text p {
+        font-size: 1.1em;
+    }
+    .right-visual {
+        min-height: 450px;
+        width: 100%;
+    }
+    .character-container {
+        width: 500px;
+        height: 500px;
+        transform: translate(-50%, -50%) rotate(0deg); /* Remove rotation on smaller screens */
+        clip-path: circle(50%); /* Simpler clip path */
+    }
+    .character-image {
+        transform: rotate(0deg) scale(1);
+    }
+
+    section {
+        padding: 80px 30px;
+    }
+    section h2 {
+        font-size: 3em;
+        margin-bottom: 50px;
+    }
+    .info-cards-container, .admin-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 20px;
+    }
+    .main-nav {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .main-nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+    .header-right {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .tiktok-handle-header {
+        display: block;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+    .hero-text h1 {
+        font-size: 3.5em;
+    }
+    .hero-text p {
+        font-size: 1em;
+    }
+    .cta-button {
+        font-size: 1em;
+        padding: 15px 25px;
+    }
+    .character-container {
+        width: 350px;
+        height: 350px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+    section h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .info-card h3 {
+        font-size: 1.5em;
+    }
+    .admin-card h3 {
+        font-size: 1.4em;
+    }
+    .contact-section p {
+        font-size: 1em;
+    }
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+    .hero-text p {
+        font-size: 0.9em;
+    }
+    .character-container {
+        width: 280px;
+        height: 280px;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    .info-card h3 {
+        font-size: 1.3em;
+    }
+    .admin-card h3 {
+        font-size: 1.2em;
+    }
+    .info-cards-container, .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
